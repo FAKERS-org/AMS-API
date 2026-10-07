@@ -1,0 +1,62 @@
+[
+  {
+    "full_name": "Super Admin",
+    "email": "superadmin@university.edu",
+    "password": "SuperAdmin123!",
+    "role": "super_admin"
+  },
+  {
+    "full_name": "System Administrator",
+    "email": "admin@university.edu",
+    "password": "Admin123!",
+    "role": "admin"
+  },
+  {
+    "full_name": "Mary Williams",
+    "email": "mary.williams@university.edu",
+    "password": "Staff123!",
+    "role": "staff"
+  },
+  {
+    "full_name": "David Chen",
+    "email": "david.chen@university.edu",
+    "password": "Staff123!",
+    "role": "staff"
+  },
+  {
+    "full_name": "Dr. Robert Lee",
+    "email": "robert.lee@university.edu",
+    "password": "Faculty123!",
+    "role": "faculty"
+  },
+  {
+    "full_name": "Prof. Sarah Kim",
+    "email": "sarah.kim@university.edu",
+    "password": "Faculty123!",
+    "role": "faculty"
+  },
+  {
+    "full_name": "Dr. Michael Brown",
+    "email": "michael.brown@university.edu",
+    "password": "Faculty123!",
+    "role": "faculty"
+  },
+  {
+    "full_name": "Guest Lecturer One",
+    "email": "guest1@university.edu",
+    "password": "Guest123!",
+    "role": "faculty"
+  },
+  {
+    "full_name": "Registrar Office",
+    "email": "registrar@university.edu",
+    "password": "Office123!",
+    "role": "staff"
+  },
+  {
+    "full_name": "IT Helpdesk",
+    "email": "helpdesk@university.edu",
+    "password": "Help123!",
+    "role": "staff"
+  }
+]
