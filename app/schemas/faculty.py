@@ -75,7 +75,33 @@ class FacultyUpdate(BaseModel):
 # ── Assignment schemas ──
 class CourseFacultyCreate(BaseModel):
     course_id: int
-    academic_year: str = Field(..., pattern=r"^\d{4}-\d{4}$")  # "2026-2027"
+    academic_year: str = Field(..., pattern=r"^\d{4}-\d{4}$")
     semester: Semester
     section: str = "A"
     role: InstructorRole = InstructorRole.LEAD
+
+
+class PublicFacultyRead(BaseModel):
+    id: int
+    full_name: str
+    email: EmailStr
+    title: FacultyTitle
+    specialization: Optional[str] = None
+    bio: Optional[str] = None
+    office_location: Optional[str] = None
+    department_name: Optional[str] = None
+
+    model_config = {"from_attributes": True}
+
+
+class PublicFacultyDetailRead(PublicFacultyRead):
+    current_assignments: list[CourseFacultyRead] = Field(default_factory=list)
+
+
+class PublicFacultyPagination(BaseModel):
+    data: list[PublicFacultyRead]
+    total: int
+    page: int
+    page_size: int
+    total_pages: int
+

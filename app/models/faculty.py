@@ -48,3 +48,20 @@ class Faculty(IDMixin, TimestampMixin, Base):
         back_populates="faculty",
         cascade="all, delete-orphan",
     )
+
+    @property
+    def full_name(self) -> str:
+        return self.user.full_name if self.user else ""
+
+    @property
+    def email(self) -> str:
+        return self.user.email if self.user else ""
+
+    @property
+    def department_name(self) -> str | None:
+        return self.department.name if self.department else None
+
+    @property
+    def current_assignments(self):
+        return self.course_assignments
+
