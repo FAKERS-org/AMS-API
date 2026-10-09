@@ -8,6 +8,12 @@ from app.models.user import User
 from app.models.student import Student
 from app.models.faculty import Faculty
 from app.models.relations.course_faculty import CourseFaculty
+from app.models.event import Event, EventCategory
+from app.models.scholarship import Scholarship
+from app.models.partner import Partner
+from app.models.project import Project
+from app.models.award import Award
+from app.models.collaboration import Collaboration
 
 __all__ = [
     "Base",
@@ -19,4 +25,11 @@ __all__ = [
     "Faculty",
     "CourseFaculty",
     "Announcement",
+    "Event",
+    "EventCategory",
+    "Scholarship",
+    "Partner",
+    "Project",
+    "Award",
+    "Collaboration",
 ]

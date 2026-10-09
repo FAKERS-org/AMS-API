@@ -20,3 +20,15 @@ class Student(IDMixin, TimestampMixin, Base):
     user = relationship("User", back_populates="student_profile")
     department = relationship("Department", back_populates="students")
     enrollments = relationship("Enrollment", back_populates="student")
+
+    @property
+    def full_name(self) -> str:
+        return self.user.full_name if self.user else ""
+
+    @property
+    def email(self) -> str:
+        return self.user.email if self.user else ""
+
+    @property
+    def department_name(self) -> str | None:
+        return self.department.name if self.department else None
