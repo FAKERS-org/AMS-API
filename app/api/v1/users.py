@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, Query, Response, status
+from pydantic import BaseModel
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
@@ -22,20 +23,33 @@ def _require_admin(
     return require_roles(Role.ADMIN, Role.SUPER_ADMIN)(current_user)
 
 
-@router.get("", response_model=UserPage)
+class UpdatePasswordDto(BaseModel):
+    oldPassword: str
+    newPassword: str
+
+
+class UpdateRoleDto(BaseModel):
+    role_id: int
+
+
+@router.get("", response_model=list[UserRead] | UserPage)
 async def list_users(
+    paginate: bool = Query(False),
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=100),
     service: UserService = Depends(_service),
     _actor: User = Depends(_require_admin),
 ):
-    result = await service.list_users(page=page, page_size=page_size)
-    return UserPage(
-        **{
-            **result,
-            "items": [UserRead.model_validate(user) for user in result["items"]],
-        }
-    )
+    if paginate:
+        result = await service.list_users(page=page, page_size=page_size)
+        return UserPage(
+            **{
+                **result,
+                "items": [UserRead.model_validate(user) for user in result["items"]],
+            }
+        )
+    users = await service.get_all()
+    return [UserRead.model_validate(u) for u in users]
 
 
 @router.get("/{user_id}", response_model=UserRead)
@@ -64,6 +78,35 @@ async def update_user(
     actor: User = Depends(_require_admin),
 ):
     return await service.update_user(user_id, data, actor)
+
+
+@router.patch("/{user_id}/password")
+async def update_password(
+    user_id: int,
+    dto: UpdatePasswordDto,
+    service: UserService = Depends(_service),
+    _actor: User = Depends(_require_admin),
+):
+    await service.update_password(user_id, dto.oldPassword, dto.newPassword)
+    return {"message": "Password updated successfully"}
+
+
+@router.patch("/{user_id}/role", response_model=UserRead)
+async def update_user_role(
+    user_id: int,
+    dto: UpdateRoleDto,
+    service: UserService = Depends(_service),
+    _actor: User = Depends(_require_admin),
+):
+    return await service.update_role(user_id, dto.role_id)
+
+
+@router.get("/{user_id}/sessions")
+async def get_user_sessions(
+    user_id: int,
+    _actor: User = Depends(_require_admin),
+):
+    return []
 
 
 @router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT)

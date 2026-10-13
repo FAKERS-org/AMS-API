@@ -37,3 +37,51 @@ class AnnouncementRepository(BaseRepository[Announcement]):
             "page_size": page_size,
             "total_pages": math.ceil(total / page_size) if total else 0,
         }
+
+    async def list_all(
+        self,
+        *,
+        page: int = 1,
+        page_size: int = 20,
+        search: str | None = None,
+        is_published: bool | None = None,
+    ):
+        import math
+        from sqlalchemy import func, or_
+
+        base = select(Announcement)
+
+        if is_published is not None:
+            base = base.where(Announcement.is_published == is_published)
+
+        if search:
+            search_pattern = f"%{search}%"
+            base = base.where(
+                or_(
+                    Announcement.title.ilike(search_pattern),
+                    Announcement.content.ilike(search_pattern),
+                )
+            )
+
+        total = (
+            await self.db.execute(select(func.count()).select_from(base.subquery()))
+        ).scalar_one()
+
+        stmt = (
+            base.order_by(
+                Announcement.is_pinned.desc(),
+                Announcement.created_at.desc(),
+            )
+            .offset((page - 1) * page_size)
+            .limit(page_size)
+        )
+
+        data = (await self.db.execute(stmt)).scalars().all()
+
+        return {
+            "data": data,
+            "total": total,
+            "page": page,
+            "page_size": page_size,
+            "total_pages": math.ceil(total / page_size) if total else 0,
+        }

@@ -50,6 +50,50 @@ class CollaborationRepository(BaseRepository[Collaboration]):
             "total_pages": math.ceil(total / page_size) if total else 0,
         }
 
+    async def list_all(
+        self,
+        *,
+        page: int = 1,
+        page_size: int = 20,
+        search: str | None = None,
+        is_published: bool | None = None,
+    ):
+        base = select(Collaboration)
+
+        if is_published is not None:
+            base = base.where(Collaboration.is_published == is_published)
+
+        if search:
+            search_pattern = f"%{search}%"
+            base = base.where(
+                or_(
+                    Collaboration.title.ilike(search_pattern),
+                    Collaboration.description.ilike(search_pattern),
+                    Collaboration.objective.ilike(search_pattern),
+                    Collaboration.tag.ilike(search_pattern),
+                )
+            )
+
+        total = (
+            await self.db.execute(select(func.count()).select_from(base.subquery()))
+        ).scalar_one()
+
+        stmt = (
+            base.order_by(Collaboration.created_at.desc())
+            .offset((page - 1) * page_size)
+            .limit(page_size)
+        )
+
+        data = (await self.db.execute(stmt)).scalars().all()
+
+        return {
+            "data": data,
+            "total": total,
+            "page": page,
+            "page_size": page_size,
+            "total_pages": math.ceil(total / page_size) if total else 0,
+        }
+
     async def get_published_by_id(self, collaboration_id: int) -> Collaboration | None:
         stmt = select(Collaboration).where(
             Collaboration.id == collaboration_id,
@@ -57,4 +101,3 @@ class CollaborationRepository(BaseRepository[Collaboration]):
         )
         result = await self.db.execute(stmt)
         return result.scalar_one_or_none()
-

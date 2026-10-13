@@ -45,3 +45,8 @@ class CourseFaculty(IDMixin, TimestampMixin, Base):
 
     course = relationship("Course", back_populates="faculty_assignments")
     faculty = relationship("Faculty", back_populates="course_assignments")
+
+    @property
+    def assigned_at(self):
+        return self.created_at
+

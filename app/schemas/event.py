@@ -2,20 +2,21 @@ from datetime import datetime
 from pydantic import BaseModel
 
 from app.models.event import EventCategory
+from app.schemas.common import PaginationMeta
 
 
 class EventRead(BaseModel):
     id: int
     title: str
     category: EventCategory
-    description: str | None
-    preview: str | None
-    published_by: str | None
-    location: str | None
-    tag: str | None
-    photo: str | None
-    event_url: str | None
-    published_date: datetime | None
+    description: str | None = None
+    preview: str | None = None
+    published_by: str | None = None
+    location: str | None = None
+    tag: str | None = None
+    photo: str | None = None
+    event_url: str | None = None
+    published_date: datetime | None = None
     status: str
     is_published: bool
     created_at: datetime
@@ -59,4 +60,13 @@ class EventPagination(BaseModel):
     page: int
     page_size: int
     total_pages: int
+    meta: PaginationMeta | None = None
 
+    def model_post_init(self, __context):
+        if not self.meta:
+            self.meta = PaginationMeta(
+                currentPage=self.page,
+                perPage=self.page_size,
+                totalPages=self.total_pages,
+                totalItems=self.total,
+            )

@@ -10,6 +10,26 @@ class AnnouncementService:
     async def list_published(self, page: int = 1, page_size: int = 20):
         return await self.repo.get_published(page=page, page_size=page_size)
 
+    async def list_all(
+        self,
+        page: int = 1,
+        page_size: int = 20,
+        search: str | None = None,
+        is_published: bool | None = None,
+    ):
+        return await self.repo.list_all(
+            page=page,
+            page_size=page_size,
+            search=search,
+            is_published=is_published,
+        )
+
+    async def get_by_id(self, announcement_id: int):
+        ann = await self.repo.get_by_id(announcement_id)
+        if not ann:
+            raise AppException(404, "Announcement not found")
+        return ann
+
     async def create(self, data: AnnouncementCreate, author_id: int):
         return await self.repo.create(
             {**data.model_dump(), "author_id": author_id, "is_published": True}

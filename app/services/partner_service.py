@@ -7,6 +7,26 @@ class PartnerService:
     def __init__(self, repo: PartnerRepository):
         self.repo = repo
 
+    async def setup_table(self):
+        return [
+            {"value": "name", "label": "Name", "type": "text"},
+            {"value": "description", "label": "Description", "type": "text"},
+            {"value": "photo", "label": "Photo", "type": "image"},
+            {"value": "actions", "label": "Actions", "type": "actions"},
+        ]
+
+    async def setup(self):
+        return {
+            "name": "Partner",
+            "fields": [
+                {"name": "name", "value": "name", "type": "text", "label": "Name", "is_required": True},
+                {"name": "photo", "value": "photo", "type": "image", "label": "Photo"},
+                {"name": "website_url", "value": "website_url", "type": "text", "label": "Website URL"},
+                {"name": "partner_type", "value": "partner_type", "type": "text", "label": "Partner Type"},
+                {"name": "description", "value": "description", "type": "textarea", "label": "Description"},
+            ],
+        }
+
     async def list_active(
         self,
         page: int = 1,
@@ -21,11 +41,36 @@ class PartnerService:
             partner_type=partner_type,
         )
 
+    async def list_all(
+        self,
+        page: int = 1,
+        page_size: int = 20,
+        search: str | None = None,
+        partner_type: str | None = None,
+        is_active: bool | None = None,
+    ):
+        return await self.repo.list_all(
+            page=page,
+            page_size=page_size,
+            search=search,
+            partner_type=partner_type,
+            is_active=is_active,
+        )
+
     async def get_active_by_id(self, partner_id: int):
         partner = await self.repo.get_active_by_id(partner_id)
         if not partner:
             raise AppException(404, "Partner not found")
         return partner
+
+    async def get_by_id(self, partner_id: int):
+        partner = await self.repo.get_by_id(partner_id)
+        if not partner:
+            raise AppException(404, "Partner not found")
+        return partner
+
+    async def view(self, partner_id: int):
+        return await self.get_by_id(partner_id)
 
     async def create(self, data: PartnerCreate):
         return await self.repo.create(data.model_dump())
@@ -41,4 +86,3 @@ class PartnerService:
         if not partner:
             raise AppException(404, "Partner not found")
         await self.repo.delete(partner)
-
