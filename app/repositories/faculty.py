@@ -13,6 +13,89 @@ class FacultyRepository(BaseRepository[Faculty]):
     def __init__(self, db: AsyncSession):
         super().__init__(Faculty, db)
 
+    async def get_by_employee_id(self, employee_id: str) -> Faculty | None:
+        stmt = select(Faculty).where(Faculty.employee_id == employee_id)
+        result = await self.db.execute(stmt)
+        return result.scalar_one_or_none()
+
+    async def get_by_user_id(self, user_id: int) -> Faculty | None:
+        stmt = select(Faculty).where(Faculty.user_id == user_id)
+        result = await self.db.execute(stmt)
+        return result.scalar_one_or_none()
+
+    async def get_with_relations(self, faculty_id: int) -> Faculty | None:
+        stmt = (
+            select(Faculty)
+            .options(
+                joinedload(Faculty.user),
+                joinedload(Faculty.department),
+                selectinload(Faculty.course_assignments).joinedload(
+                    CourseFaculty.course
+                ),
+            )
+            .where(Faculty.id == faculty_id)
+        )
+        result = await self.db.execute(stmt)
+        return result.scalar_one_or_none()
+
+    async def list_all(
+        self,
+        *,
+        page: int = 1,
+        page_size: int = 20,
+        search: str | None = None,
+        department_id: int | None = None,
+        is_active: bool | None = None,
+    ):
+        base = (
+            select(Faculty)
+            .join(Faculty.user)
+            .outerjoin(Faculty.department)
+        )
+
+        if is_active is not None:
+            base = base.where(Faculty.is_active == is_active)
+
+        if search:
+            search_pattern = f"%{search}%"
+            base = base.where(
+                or_(
+                    User.full_name.ilike(search_pattern),
+                    Faculty.employee_id.ilike(search_pattern),
+                    Faculty.specialization.ilike(search_pattern),
+                )
+            )
+
+        if department_id is not None:
+            base = base.where(Faculty.department_id == department_id)
+
+        total = (
+            await self.db.execute(select(func.count()).select_from(base.subquery()))
+        ).scalar_one()
+
+        stmt = (
+            base.options(
+                joinedload(Faculty.user),
+                joinedload(Faculty.department),
+                selectinload(Faculty.course_assignments).joinedload(
+                    CourseFaculty.course
+                ),
+            )
+            .order_by(Faculty.id.asc())
+            .offset((page - 1) * page_size)
+            .limit(page_size)
+        )
+
+        data = (await self.db.execute(stmt)).scalars().all()
+
+        return {
+            "data": data,
+            "total": total,
+            "page": page,
+            "page_size": page_size,
+            "total_pages": math.ceil(total / page_size) if total else 0,
+        }
+
     async def get_public_list(
         self,
         *,
@@ -76,3 +159,21 @@ class FacultyRepository(BaseRepository[Faculty]):
         result = await self.db.execute(stmt)
         return result.scalar_one_or_none()
 
+    async def assign_course(self, assignment: CourseFaculty) -> CourseFaculty:
+        self.db.add(assignment)
+        await self.db.flush()
+        await self.db.refresh(assignment)
+        return assignment
+
+    async def get_assignment(self, assignment_id: int) -> CourseFaculty | None:
+        stmt = (
+            select(CourseFaculty)
+            .options(joinedload(CourseFaculty.course))
+            .where(CourseFaculty.id == assignment_id)
+        )
+        result = await self.db.execute(stmt)
+        return result.scalar_one_or_none()
+
+    async def delete_assignment(self, assignment: CourseFaculty) -> None:
+        await self.db.delete(assignment)
+        await self.db.flush()

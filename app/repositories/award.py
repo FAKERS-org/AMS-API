@@ -50,6 +50,50 @@ class AwardRepository(BaseRepository[Award]):
             "total_pages": math.ceil(total / page_size) if total else 0,
         }
 
+    async def list_all(
+        self,
+        *,
+        page: int = 1,
+        page_size: int = 20,
+        search: str | None = None,
+        is_published: bool | None = None,
+    ):
+        base = select(Award)
+
+        if is_published is not None:
+            base = base.where(Award.is_published == is_published)
+
+        if search:
+            search_pattern = f"%{search}%"
+            base = base.where(
+                or_(
+                    Award.title.ilike(search_pattern),
+                    Award.description.ilike(search_pattern),
+                    Award.achievement.ilike(search_pattern),
+                    Award.recipient_name.ilike(search_pattern),
+                )
+            )
+
+        total = (
+            await self.db.execute(select(func.count()).select_from(base.subquery()))
+        ).scalar_one()
+
+        stmt = (
+            base.order_by(Award.created_at.desc())
+            .offset((page - 1) * page_size)
+            .limit(page_size)
+        )
+
+        data = (await self.db.execute(stmt)).scalars().all()
+
+        return {
+            "data": data,
+            "total": total,
+            "page": page,
+            "page_size": page_size,
+            "total_pages": math.ceil(total / page_size) if total else 0,
+        }
+
     async def get_published_by_id(self, award_id: int) -> Award | None:
         stmt = select(Award).where(
             Award.id == award_id,
@@ -57,4 +101,3 @@ class AwardRepository(BaseRepository[Award]):
         )
         result = await self.db.execute(stmt)
         return result.scalar_one_or_none()
-

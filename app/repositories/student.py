@@ -12,7 +12,28 @@ class StudentRepository(BaseRepository[Student]):
     def __init__(self, db: AsyncSession):
         super().__init__(Student, db)
 
-    async def get_public_list(
+    async def get_by_student_id_number(self, student_id_number: str) -> Student | None:
+        stmt = select(Student).where(
+            func.lower(Student.student_id_number) == func.lower(student_id_number)
+        )
+        result = await self.db.execute(stmt)
+        return result.scalar_one_or_none()
+
+    async def get_by_user_id(self, user_id: int) -> Student | None:
+        stmt = select(Student).where(Student.user_id == user_id)
+        result = await self.db.execute(stmt)
+        return result.scalar_one_or_none()
+
+    async def get_with_relations(self, student_id: int) -> Student | None:
+        stmt = (
+            select(Student)
+            .options(joinedload(Student.user), joinedload(Student.department))
+            .where(Student.id == student_id)
+        )
+        result = await self.db.execute(stmt)
+        return result.scalar_one_or_none()
+
+    async def list_all(
         self,
         *,
         page: int = 1,
@@ -35,6 +56,7 @@ class StudentRepository(BaseRepository[Student]):
                 or_(
                     User.full_name.ilike(search_pattern),
                     Student.student_id_number.ilike(search_pattern),
+                    User.email.ilike(search_pattern),
                 )
             )
 
@@ -59,12 +81,22 @@ class StudentRepository(BaseRepository[Student]):
             "total_pages": math.ceil(total / page_size) if total else 0,
         }
 
-    async def get_public_by_id(self, student_id: int) -> Student | None:
-        stmt = (
-            select(Student)
-            .options(joinedload(Student.user), joinedload(Student.department))
-            .where(Student.id == student_id)
+    async def get_public_list(
+        self,
+        *,
+        page: int = 1,
+        page_size: int = 20,
+        search: str | None = None,
+        department_id: int | None = None,
+        year_level: int | None = None,
+    ):
+        return await self.list_all(
+            page=page,
+            page_size=page_size,
+            search=search,
+            department_id=department_id,
+            year_level=year_level,
         )
-        result = await self.db.execute(stmt)
-        return result.scalar_one_or_none()
 
+    async def get_public_by_id(self, student_id: int) -> Student | None:
+        return await self.get_with_relations(student_id)

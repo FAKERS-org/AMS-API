@@ -1,17 +1,19 @@
 from datetime import datetime
 from pydantic import BaseModel
 
+from app.schemas.common import PaginationMeta
+
 
 class CollaborationRead(BaseModel):
     id: int
     title: str
-    description: str | None
-    duration: str | None
-    funding: str | None
-    objective: str | None
-    tag: str | None
-    image: str | None
-    url: str | None
+    description: str | None = None
+    duration: str | None = None
+    funding: str | None = None
+    objective: str | None = None
+    tag: str | None = None
+    image: str | None = None
+    url: str | None = None
     is_published: bool
     created_at: datetime
 
@@ -48,4 +50,13 @@ class CollaborationPagination(BaseModel):
     page: int
     page_size: int
     total_pages: int
+    meta: PaginationMeta | None = None
 
+    def model_post_init(self, __context):
+        if not self.meta:
+            self.meta = PaginationMeta(
+                currentPage=self.page,
+                perPage=self.page_size,
+                totalPages=self.total_pages,
+                totalItems=self.total,
+            )
