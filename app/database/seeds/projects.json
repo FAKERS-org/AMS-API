@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Khmer NLP: Text Classification for Low-Resource Languages",
+    "description": "This project develops natural language processing models for Khmer text classification, addressing the challenge of limited labeled data for low-resource languages. The team applies transfer learning and data augmentation techniques.",
+    "partner": "Institut Polytechnique de Paris",
+    "duration": "2023–2025",
+    "funding": "$45,000 (AUF Research Grant)",
+    "investigators": "Dr. Sothea Has, Dr. Sokkhey Phauk",
+    "students": "Chan Dararith, Siv Mey",
+    "status": "ongoing",
+    "is_published": true
+  },
+  {
+    "title": "Predictive Analytics for Rice Yield Estimation in Cambodia",
+    "description": "Using satellite imagery, IoT sensor data, and machine learning to predict rice yields across Cambodian provinces. Results will inform agricultural policy and food security planning.",
+    "partner": "Ministry of Agriculture, Forestry and Fisheries",
+    "duration": "2024–2026",
+    "funding": "$62,000 (World Bank Development Grant)",
+    "investigators": "Dr. Sokkhey Phauk",
+    "students": "Reaksmey Keo, Rachana Ly",
+    "status": "ongoing",
+    "is_published": true
+  },
+  {
+    "title": "Smart Energy Monitoring System for University Buildings",
+    "description": "Designing and deploying IoT-based energy monitoring systems across ITC campus buildings to reduce energy consumption and promote sustainable campus operations.",
+    "partner": "Smart Axiata, Ministry of Mines and Energy",
+    "duration": "2024–2025",
+    "funding": "$28,000 (Smart CSR Fund)",
+    "investigators": "Dr. Chantha Kim",
+    "students": "Pisey Heng, Bondol Chhon",
+    "status": "ongoing",
+    "is_published": true
+  }
+]
+

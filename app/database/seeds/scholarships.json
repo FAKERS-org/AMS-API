@@ -1,0 +1,42 @@
+[
+  {
+    "title": "French Government Excellence Scholarship",
+    "description": "Awarded by the French Embassy in Cambodia to outstanding students pursuing engineering or data science studies at ITC. Covers tuition, accommodation, and monthly stipend.",
+    "amount": "$1,200 / month",
+    "duration": "2 years",
+    "eligibility": "Cambodian nationals enrolled in Year 3–5, GPA ≥ 3.5, intermediate French level",
+    "application_process": "Submit CV, motivation letter, academic transcripts, and French proficiency certificate to the Scholarship Office.",
+    "contact_office": "Scholarship Office, ITC",
+    "contact_email": "scholarship@itc.edu.kh",
+    "contact_phone": "+855 23 880 369",
+    "deadline": "2025-04-30T23:59:00",
+    "is_published": true
+  },
+  {
+    "title": "ASEAN Development Fund Scholarship",
+    "description": "Merit-based scholarship for students in STEM fields across ASEAN member states. Open to ITC students in Data Science and Engineering.",
+    "amount": "$800 / month",
+    "duration": "1 year (renewable)",
+    "eligibility": "ASEAN citizens, GPA ≥ 3.0, enrolled full-time, demonstrated financial need",
+    "application_process": "Online application via the ASEAN Development Fund portal. ITC Scholarship Office assists with nomination.",
+    "contact_office": "International Relations Office",
+    "contact_email": "international@itc.edu.kh",
+    "contact_phone": "+855 23 880 370",
+    "deadline": "2025-05-31T23:59:00",
+    "is_published": true
+  },
+  {
+    "title": "ITC Internal Merit Scholarship",
+    "description": "Annual internal scholarship granted by ITC to top-performing students from all departments. Covers 50% of tuition fees for one academic year.",
+    "amount": "50% tuition waiver",
+    "duration": "1 academic year",
+    "eligibility": "Enrolled ITC students, top 5% GPA in department, no pending disciplinary issues",
+    "application_process": "Automatically nominated by Academic Affairs based on GPA ranking. No application required.",
+    "contact_office": "Academic Affairs Office",
+    "contact_email": "academic@itc.edu.kh",
+    "contact_phone": "+855 23 880 371",
+    "deadline": "2025-06-15T23:59:00",
+    "is_published": true
+  }
+]
+

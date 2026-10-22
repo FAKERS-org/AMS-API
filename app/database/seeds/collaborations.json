@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Joint Research Program on AI and Data Science – ITC & IP Paris",
+    "description": "A multi-year collaborative research program between ITC and Institut Polytechnique de Paris focused on advancing AI and data science methodologies applicable to Southeast Asian contexts, including healthcare, agriculture, and smart cities.",
+    "duration": "2022–2026",
+    "funding": "$120,000 (French Embassy Cambodia & AUF)",
+    "objective": "Develop joint research publications, co-supervised PhD students, and a shared AI research lab (ReDA Lab) accessible to both institutions.",
+    "tag": "Research",
+    "image": "/ams/collaborations/itc-ip-paris.jpg",
+    "url": "/collaborations/itc-ip-paris",
+    "is_published": true
+  },
+  {
+    "title": "ASEAN University Network Data Science Consortium",
+    "description": "ITC participates in the ASEAN University Network Data Science Consortium, collaborating with universities across Thailand, Vietnam, Malaysia, and Indonesia to harmonize data science curricula and share research resources.",
+    "duration": "2023–2025",
+    "funding": "$35,000 (ASEAN Development Fund)",
+    "objective": "Standardize data science degree programs, enable student exchange, and publish joint research in regional journals.",
+    "tag": "Academic",
+    "image": "/ams/collaborations/aun-ds.jpg",
+    "url": "/collaborations/asean-ds-consortium",
+    "is_published": true
+  },
+  {
+    "title": "Smart City Technology Partnership – ITC & Smart Axiata",
+    "description": "A strategic partnership between ITC and Smart Axiata to develop smart city technology prototypes for Phnom Penh, including IoT sensor networks, real-time data dashboards, and AI-powered city services.",
+    "duration": "2024–2026",
+    "funding": "$80,000 (Smart CSR Innovation Fund)",
+    "objective": "Prototype three smart city use cases, provide internship opportunities for 20+ ITC students annually, and file joint patent applications.",
+    "tag": "Industry",
+    "image": "/ams/collaborations/smart-axiata.jpg",
+    "url": "/collaborations/smart-city-itc-smart",
+    "is_published": true
+  }
+]
+

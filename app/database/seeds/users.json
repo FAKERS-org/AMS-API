@@ -24,39 +24,69 @@
     "role": "staff"
   },
   {
-    "full_name": "Dr. Robert Lee",
-    "email": "robert.lee@university.edu",
+    "full_name": "Dr. Sothea Has",
+    "email": "sothea.has@itc.edu.kh",
     "password": "Faculty123!",
     "role": "faculty"
   },
   {
-    "full_name": "Prof. Sarah Kim",
-    "email": "sarah.kim@university.edu",
+    "full_name": "Dr. Sokkhey Phauk",
+    "email": "sokkhey.phauk@itc.edu.kh",
     "password": "Faculty123!",
     "role": "faculty"
   },
   {
-    "full_name": "Dr. Michael Brown",
-    "email": "michael.brown@university.edu",
+    "full_name": "Mr. Sok Dara",
+    "email": "sok.dara@itc.edu.kh",
     "password": "Faculty123!",
     "role": "faculty"
   },
   {
-    "full_name": "Guest Lecturer One",
-    "email": "guest1@university.edu",
-    "password": "Guest123!",
+    "full_name": "Dr. Chantha Kim",
+    "email": "chantha.kim@itc.edu.kh",
+    "password": "Faculty123!",
     "role": "faculty"
   },
   {
-    "full_name": "Registrar Office",
-    "email": "registrar@university.edu",
-    "password": "Office123!",
-    "role": "staff"
+    "full_name": "Chan Dararith",
+    "email": "dararith@gmail.com",
+    "password": "Student123!",
+    "role": "student"
   },
   {
-    "full_name": "IT Helpdesk",
-    "email": "helpdesk@university.edu",
-    "password": "Help123!",
-    "role": "staff"
+    "full_name": "Siv Mey",
+    "email": "sivmey@student.itc.edu.kh",
+    "password": "Student123!",
+    "role": "student"
+  },
+  {
+    "full_name": "Reaksmey Keo",
+    "email": "reaksmey@student.itc.edu.kh",
+    "password": "Student123!",
+    "role": "student"
+  },
+  {
+    "full_name": "Rachana Ly",
+    "email": "rachana@student.itc.edu.kh",
+    "password": "Student123!",
+    "role": "student"
+  },
+  {
+    "full_name": "Pisey Heng",
+    "email": "pisey@student.itc.edu.kh",
+    "password": "Student123!",
+    "role": "student"
+  },
+  {
+    "full_name": "Bondol Chhon",
+    "email": "bondol@student.itc.edu.kh",
+    "password": "Student123!",
+    "role": "student"
+  },
+  {
+    "full_name": "Sengmeng Prom",
+    "email": "sengmeng@student.itc.edu.kh",
+    "password": "Student123!",
+    "role": "student"
   }
 ]

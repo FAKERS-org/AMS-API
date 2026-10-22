@@ -1,0 +1,87 @@
+[
+  {
+    "title": "University Open Day 2025",
+    "category": "events",
+    "description": "Join us for the annual Open Day where prospective students and parents can tour the campus, attend info sessions, and speak with academic advisors about our Engineering and Data Science programs.",
+    "preview": "Explore our campus, meet faculty, and learn about programs offered at ITC.",
+    "published_by": "Admissions Office",
+    "location": "Main Campus, Phnom Penh",
+    "tag": "Admissions",
+    "photo": "/ams/events/open-day-2025.jpg",
+    "event_url": "/events/open-day-2025",
+    "published_date": "2025-03-10T08:00:00",
+    "status": "published",
+    "is_published": true
+  },
+  {
+    "title": "AMS Annual Research Symposium 2025",
+    "category": "events",
+    "description": "The AMS Research Symposium brings together faculty, students, and industry partners to present and discuss cutting-edge research in data science, AI, and engineering.",
+    "preview": "Annual research symposium showcasing ITC's latest research achievements.",
+    "published_by": "Research Department",
+    "location": "Conference Hall, ITC",
+    "tag": "Research",
+    "photo": "/ams/events/research-symposium-2025.jpg",
+    "event_url": "/events/research-symposium-2025",
+    "published_date": "2025-10-01T09:00:00",
+    "status": "published",
+    "is_published": true
+  },
+  {
+    "title": "Hackathon: AI for Social Good 2025",
+    "category": "events",
+    "description": "A 48-hour hackathon challenging students to develop AI solutions addressing real social issues in Cambodia including healthcare, agriculture, and education.",
+    "preview": "48-hour hackathon building AI solutions for Cambodia's social challenges.",
+    "published_by": "Student Affairs Office",
+    "location": "Engineering Building, ITC",
+    "tag": "Technology",
+    "photo": "/ams/events/hackathon-2025.jpg",
+    "event_url": "/events/hackathon-2025",
+    "published_date": "2025-11-15T08:00:00",
+    "status": "published",
+    "is_published": true
+  },
+  {
+    "title": "Industry Partner Career Fair 2026",
+    "category": "events",
+    "description": "Meet representatives from leading technology and engineering companies in Cambodia and the region. Bring your resume and explore full-time and internship opportunities.",
+    "preview": "Connect with top employers at our annual career fair.",
+    "published_by": "Career Development Center",
+    "location": "Main Hall, ITC",
+    "tag": "Career",
+    "photo": "/ams/events/career-fair-2026.jpg",
+    "event_url": "/events/career-fair-2026",
+    "published_date": "2026-01-20T09:00:00",
+    "status": "upcoming",
+    "is_published": true
+  },
+  {
+    "title": "ReDA Lab Open House 2026",
+    "category": "events",
+    "description": "Visit the ReDA (Research in Data Analytics) Lab and see ongoing projects in machine learning, NLP, and data engineering. Open to students, faculty, and industry partners.",
+    "preview": "Open house at the ReDA Lab showcasing AI and data science research.",
+    "published_by": "ReDA Lab",
+    "location": "ReDA Lab, Building A, ITC",
+    "tag": "Research",
+    "photo": "/ams/events/reda-lab-open-house.jpg",
+    "event_url": "/events/reda-lab-open-house-2026",
+    "published_date": "2026-02-10T10:00:00",
+    "status": "upcoming",
+    "is_published": true
+  },
+  {
+    "title": "ITC Graduation Ceremony 2025",
+    "category": "news",
+    "description": "Celebrating the graduation of the Class of 2025 from the Institute of Technology of Cambodia. Graduates from Engineering, Data Science, and Financial Engineering departments will receive their diplomas.",
+    "preview": "Congratulations to the ITC Class of 2025 graduates!",
+    "published_by": "Academic Registrar",
+    "location": "Main Auditorium, ITC",
+    "tag": "Graduation",
+    "photo": "/ams/events/graduation-2025.jpg",
+    "event_url": "/events/graduation-2025",
+    "published_date": "2025-07-15T09:00:00",
+    "status": "published",
+    "is_published": true
+  }
+]
+

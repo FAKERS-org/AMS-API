@@ -1,0 +1,17 @@
+[
+  { "faculty_email": "sothea.has@itc.edu.kh", "course_code": "AMSI31FRA", "academic_year": "2024-2025", "semester": "fall", "section": "A", "role": "lead" },
+  { "faculty_email": "sothea.has@itc.edu.kh", "course_code": "AMSI31ANG", "academic_year": "2024-2025", "semester": "fall", "section": "A", "role": "lead" },
+  { "faculty_email": "sothea.has@itc.edu.kh", "course_code": "AMSI31STA", "academic_year": "2024-2025", "semester": "fall", "section": "A", "role": "lead" },
+  { "faculty_email": "sothea.has@itc.edu.kh", "course_code": "AMSI32IML", "academic_year": "2024-2025", "semester": "spring", "section": "A", "role": "lead" },
+  { "faculty_email": "sothea.has@itc.edu.kh", "course_code": "AMSI41ARI", "academic_year": "2024-2025", "semester": "fall", "section": "A", "role": "lead" },
+  { "faculty_email": "sokkhey.phauk@itc.edu.kh", "course_code": "AMSI41STM", "academic_year": "2024-2025", "semester": "fall", "section": "A", "role": "lead" },
+  { "faculty_email": "sokkhey.phauk@itc.edu.kh", "course_code": "AMSI41REM", "academic_year": "2024-2025", "semester": "fall", "section": "A", "role": "lead" },
+  { "faculty_email": "sokkhey.phauk@itc.edu.kh", "course_code": "AMSI42PGM", "academic_year": "2024-2025", "semester": "spring", "section": "A", "role": "lead" },
+  { "faculty_email": "sok.dara@itc.edu.kh", "course_code": "DTCI22DSP", "academic_year": "2024-2025", "semester": "fall", "section": "A", "role": "lead" },
+  { "faculty_email": "sok.dara@itc.edu.kh", "course_code": "DTCI21DSP", "academic_year": "2024-2025", "semester": "spring", "section": "A", "role": "lead" },
+  { "faculty_email": "sok.dara@itc.edu.kh", "course_code": "DTCI22ACO", "academic_year": "2024-2025", "semester": "spring", "section": "A", "role": "lead" },
+  { "faculty_email": "chantha.kim@itc.edu.kh", "course_code": "DTCI11MCN", "academic_year": "2024-2025", "semester": "fall", "section": "A", "role": "lead" },
+  { "faculty_email": "chantha.kim@itc.edu.kh", "course_code": "DTCI12TMD", "academic_year": "2024-2025", "semester": "spring", "section": "A", "role": "lead" },
+  { "faculty_email": "chantha.kim@itc.edu.kh", "course_code": "DTCI21ELE", "academic_year": "2024-2025", "semester": "fall", "section": "A", "role": "lead" }
+]
+
