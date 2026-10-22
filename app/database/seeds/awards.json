@@ -1,0 +1,33 @@
+[
+  {
+    "title": "Outstanding Academic Achievement Award 2024",
+    "description": "Awarded to the top-performing student in the Data Science program for exceptional academic performance across all semesters.",
+    "achievement": "First Class Honors – GPA 4.0",
+    "imagepath": "/ams/awards/outstanding-academic-2024.jpg",
+    "recipient_name": "Chan Dararith",
+    "student_email": "dararith@gmail.com",
+    "award_date": "2024-07-15T10:00:00",
+    "is_published": true
+  },
+  {
+    "title": "AI Hackathon Winner 2024",
+    "description": "First place winner of the annual AI for Social Good Hackathon, recognizing innovation in applying machine learning to Cambodia's agricultural sector.",
+    "achievement": "1st Place – AI for Social Good Hackathon",
+    "imagepath": "/ams/awards/hackathon-winner-2024.jpg",
+    "recipient_name": "Siv Mey",
+    "student_email": "sivmey@student.itc.edu.kh",
+    "award_date": "2024-11-20T16:00:00",
+    "is_published": true
+  },
+  {
+    "title": "Research Excellence Award 2024",
+    "description": "Recognizing outstanding undergraduate research in the field of natural language processing for Khmer text classification.",
+    "achievement": "Best Undergraduate Research Paper",
+    "imagepath": "/ams/awards/research-excellence-2024.jpg",
+    "recipient_name": "Chan Dararith",
+    "student_email": "dararith@gmail.com",
+    "award_date": "2024-10-05T14:00:00",
+    "is_published": true
+  }
+]
+

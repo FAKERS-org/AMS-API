@@ -1,0 +1,47 @@
+[
+  {
+    "email": "sothea.has@itc.edu.kh",
+    "employee_id": "EMP-001",
+    "department": "Data Science",
+    "title": "associate_professor",
+    "specialization": "Machine Learning and Data Mining",
+    "bio": "Dr. Sothea Has is an Associate Professor specializing in machine learning and data mining. He has extensive research experience in applied AI and contributes actively to the ReDA Lab.",
+    "office_location": "Building A, Room 210",
+    "phone": "+855 23 880 369",
+    "hire_date": "2015-09-01"
+  },
+  {
+    "email": "sokkhey.phauk@itc.edu.kh",
+    "employee_id": "EMP-002",
+    "department": "Data Science",
+    "title": "assistant_professor",
+    "specialization": "Statistical Learning and Optimization",
+    "bio": "Dr. Sokkhey Phauk is an Assistant Professor whose research focuses on statistical learning, optimization techniques, and their applications in engineering problems.",
+    "office_location": "Building A, Room 215",
+    "phone": "+855 23 880 370",
+    "hire_date": "2018-09-01"
+  },
+  {
+    "email": "sok.dara@itc.edu.kh",
+    "employee_id": "EMP-003",
+    "department": "Engineering",
+    "title": "lecturer",
+    "specialization": "Computer Architecture and Systems",
+    "bio": "Mr. Sok Dara is a Lecturer in the Engineering department, teaching foundational courses in computer architecture, data structures, and programming.",
+    "office_location": "Building B, Room 101",
+    "phone": "+855 23 880 371",
+    "hire_date": "2020-09-01"
+  },
+  {
+    "email": "chantha.kim@itc.edu.kh",
+    "employee_id": "EMP-004",
+    "department": "Engineering",
+    "title": "associate_professor",
+    "specialization": "Electrical Engineering and Mechanics",
+    "bio": "Dr. Chantha Kim is an Associate Professor with expertise in electrical engineering, thermodynamics, and applied mechanics. She leads research on sustainable engineering systems.",
+    "office_location": "Building B, Room 105",
+    "phone": "+855 23 880 372",
+    "hire_date": "2012-09-01"
+  }
+]
+

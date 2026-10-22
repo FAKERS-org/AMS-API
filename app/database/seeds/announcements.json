@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Welcome to the New AMS Portal",
+    "content": "We are pleased to announce the launch of the new Academic Management System (AMS) portal. This platform provides students, faculty, and staff with streamlined access to courses, announcements, events, and academic resources. Please explore the system and reach out to the IT Helpdesk if you need support.",
+    "author_email": "admin@university.edu",
+    "is_published": true,
+    "is_pinned": true
+  },
+  {
+    "title": "Semester 1 AY 2024-2025 Registration Now Open",
+    "content": "Course registration for Semester 1 of Academic Year 2024-2025 is now open. Students should log in to the AMS portal and register for their courses before the deadline of August 31, 2024. Late registration will incur additional fees.",
+    "author_email": "admin@university.edu",
+    "is_published": true,
+    "is_pinned": true
+  },
+  {
+    "title": "Research Symposium Abstract Submission Deadline",
+    "content": "Faculty and students interested in presenting at the AMS Annual Research Symposium 2025 must submit their abstracts by September 15, 2025. Abstracts should be 300–500 words and submitted via the AMS portal under Events > Symposium Submission.",
+    "author_email": "admin@university.edu",
+    "is_published": true,
+    "is_pinned": false
+  },
+  {
+    "title": "Scholarship Application Window Open",
+    "content": "The French Government Excellence Scholarship and ITC Internal Merit Scholarship application windows are now open. Eligible students should visit the Scholarship section of AMS for details on eligibility criteria and the application process. Deadlines vary by scholarship.",
+    "author_email": "admin@university.edu",
+    "is_published": true,
+    "is_pinned": false
+  }
+]
+

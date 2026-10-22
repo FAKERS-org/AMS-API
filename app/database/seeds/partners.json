@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Smart Axiata",
+    "description": "Smart Axiata is one of Cambodia's leading telecommunications companies and a strategic industry partner of ITC, supporting technology education, internships, and research collaboration.",
+    "photo": "/ams/partners/smart-axiata.png",
+    "website_url": "https://www.smart.com.kh",
+    "partner_type": "Industry",
+    "is_active": true
+  },
+  {
+    "name": "Wing Bank",
+    "description": "Wing Bank is a leading digital financial services provider in Cambodia and an industry partner supporting FinTech education and student internship programs at ITC.",
+    "photo": "/ams/partners/wing-bank.png",
+    "website_url": "https://www.wingbank.com.kh",
+    "partner_type": "Industry",
+    "is_active": true
+  },
+  {
+    "name": "Institut Polytechnique de Paris",
+    "description": "A leading French engineering school and longstanding academic partner of ITC. The partnership enables student and faculty exchange, joint research programs, and co-supervised theses.",
+    "photo": "/ams/partners/ipp.png",
+    "website_url": "https://www.ip-paris.fr",
+    "partner_type": "Academic",
+    "is_active": true
+  },
+  {
+    "name": "Agence Universitaire de la Francophonie (AUF)",
+    "description": "AUF supports Francophone higher education institutions worldwide. Their partnership with ITC provides scholarship funding, digital library access, and faculty development grants.",
+    "photo": "/ams/partners/auf.png",
+    "website_url": "https://www.auf.org",
+    "partner_type": "Academic",
+    "is_active": true
+  },
+  {
+    "name": "Ministry of Education, Youth and Sport (MoEYS)",
+    "description": "The Ministry of Education provides regulatory oversight and collaborative support for ITC's academic programs, curriculum development, and national education initiatives.",
+    "photo": "/ams/partners/moeys.png",
+    "website_url": "https://www.moeys.gov.kh",
+    "partner_type": "Government",
+    "is_active": true
+  }
+]
+

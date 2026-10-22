@@ -1,0 +1,45 @@
+[
+  {
+    "email": "dararith@gmail.com",
+    "date_of_birth": "2002-05-14",
+    "department": "Data Science",
+    "year_level": 4
+  },
+  {
+    "email": "sivmey@student.itc.edu.kh",
+    "date_of_birth": "2002-08-22",
+    "department": "Data Science",
+    "year_level": 4
+  },
+  {
+    "email": "reaksmey@student.itc.edu.kh",
+    "date_of_birth": "2003-01-10",
+    "department": "Data Science",
+    "year_level": 4
+  },
+  {
+    "email": "rachana@student.itc.edu.kh",
+    "date_of_birth": "2002-11-30",
+    "department": "Data Science",
+    "year_level": 4
+  },
+  {
+    "email": "pisey@student.itc.edu.kh",
+    "date_of_birth": "2003-03-17",
+    "department": "Engineering",
+    "year_level": 4
+  },
+  {
+    "email": "bondol@student.itc.edu.kh",
+    "date_of_birth": "2002-07-05",
+    "department": "Engineering",
+    "year_level": 4
+  },
+  {
+    "email": "sengmeng@student.itc.edu.kh",
+    "date_of_birth": "2003-09-25",
+    "department": "Engineering",
+    "year_level": 4
+  }
+]
+
